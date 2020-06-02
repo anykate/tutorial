@@ -19,3 +19,11 @@ serializer1 = PostSerializer(data=data1)
 serializer1.is_valid()
 serializer1.validated_data
 serializer1.save()
+
+Make POST request:
+http POST http://localhost:8000/ title="From console" content="From Console" author="andya"
+
+Make POST request with auth:
+http -a <<username>>:<<password>> POST http://localhost:8000/ title="From console" content="From Console" author="andya"
+e.g.
+http -a admin:1234 POST http://localhost:8000/ title="From console" content="From Console" author="andya"
