@@ -32,7 +32,7 @@ def post_detail(request, post_id):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'PUT':
-        data = JSONParser.parse(request)
+        data = JSONParser().parse(request)
         serializer = PostSerializer(post, data=data)
         if serializer.is_valid():
             serializer.save()
